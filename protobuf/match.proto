@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package tournament;
+
+import "pairing.proto";
+
+message Match {
+    int32 id = 1;
+    Pairing pairing = 2;
+    Result result = 3;
+
+}
+
+message Result {
+    enum ResultType {
+        BINARY = 0;
+        POINTS = 1;
+    }
+    ResultType resultType = 1;
+    message SingleResult {
+        Team team = 1;
+        int32 result = 2;
+    }
+    repeated SingleResult results = 2;
+}

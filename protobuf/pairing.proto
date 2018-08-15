@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package tournament;
+
+import "participant.proto";
+message Pairing {
+    int32 id = 1;
+    repeated Team teams = 2;
+}
+
+message Team {
+    repeated Participant participants = 1;
+}
+
+
